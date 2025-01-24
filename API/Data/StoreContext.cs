@@ -1,4 +1,5 @@
-using API.Entities; 
+using API.Entities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore; 
 
 namespace API.Data
@@ -17,5 +18,9 @@ namespace API.Data
         // Each DbSet property allows you to query and save instances of the corresponding entity type (Product in this case).
         public DbSet<Product> Products { get; set; }
 
+        public static implicit operator ControllerContext(StoreContext v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

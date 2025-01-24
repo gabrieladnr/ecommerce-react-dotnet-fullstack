@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gabrielaRuas\\Documents\\Base2\\Estudos\\desafio-dotnet-fullstack\\API\\API.csproj": {}
+    "C:\\Users\\gabrielaRuas\\Documents\\Base2\\Estudos\\desafio-dotnet-fullstack\\APi\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gabrielaRuas\\Documents\\Base2\\Estudos\\desafio-dotnet-fullstack\\API\\API.csproj": {
+    "C:\\Users\\gabrielaRuas\\Documents\\Base2\\Estudos\\desafio-dotnet-fullstack\\APi\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gabrielaRuas\\Documents\\Base2\\Estudos\\desafio-dotnet-fullstack\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\gabrielaRuas\\Documents\\Base2\\Estudos\\desafio-dotnet-fullstack\\APi\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\gabrielaRuas\\Documents\\Base2\\Estudos\\desafio-dotnet-fullstack\\API\\API.csproj",
+        "projectPath": "C:\\Users\\gabrielaRuas\\Documents\\Base2\\Estudos\\desafio-dotnet-fullstack\\APi\\API.csproj",
         "packagesPath": "C:\\Users\\gabrielaRuas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabrielaRuas\\Documents\\Base2\\Estudos\\desafio-dotnet-fullstack\\API\\obj\\",
+        "outputPath": "C:\\Users\\gabrielaRuas\\Documents\\Base2\\Estudos\\desafio-dotnet-fullstack\\APi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gabrielaRuas\\AppData\\Roaming\\NuGet\\NuGet.Config"

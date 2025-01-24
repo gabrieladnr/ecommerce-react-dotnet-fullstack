@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ACKzDNxcJzU=",
+  "dgSpecHash": "YFvKVzlTV/Y=",
   "success": true,
-  "projectFilePath": "C:\\Users\\gabrielaRuas\\Documents\\Base2\\Estudos\\desafio-dotnet-fullstack\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\gabrielaRuas\\Documents\\Base2\\Estudos\\desafio-dotnet-fullstack\\APi\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gabrielaRuas\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\gabrielaRuas\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.0\\microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
