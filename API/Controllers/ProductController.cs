@@ -1,6 +1,7 @@
 using API.Data;
 using API.Entities;
-using Microsoft.AspNetCore.Mvc; 
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 [ApiController] // This attribute provides model binding, validation, and other behaviors specific to API controllers.
 [Route("api/[controller]")] 
@@ -16,15 +17,16 @@ public class ProductsController : ControllerBase // ControllerBase provides mini
     }
 
     [HttpGet]
-    public ActionResult<List<Product>> GetProducts()
+    public async Task<ActionResult<List<Product>>> GetProducts()
     {
-        var products = context.Products.ToList();
-        return Ok(products); //ok = 200
+        return await context.Products.ToListAsync();
     }
 
      [HttpGet("{id}")] //api/product/{id}
-    public ActionResult<Product> GetProducts(int id)
+    public async Task<ActionResult<Product>> GetProducts(int id)
     {
-        return context.Products.Find(id);
+        var product = await context.Products.FindAsync(id);
+        if (product==null) return NotFound();
+        return product;
     }
 }
