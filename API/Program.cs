@@ -24,7 +24,7 @@ builder.Services.AddDbContext<StoreContext>(opt =>
 {
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
+builder.Services.AddCors();
 
 // ========================= Build the Application =========================
 // Build the app using the configured services.
@@ -47,6 +47,13 @@ if (app.Environment.IsDevelopment())
 // Add authorization middleware to ensure protected endpoints can enforce policies.
 // Note: This assumes additional configuration for authentication/authorization is in place.
 app.UseAuthorization();
+
+app.UseCors(opt =>
+{
+    opt.AllowAnyHeader()
+    .AllowAnyMethod()
+    .WithOrigins("https://localhost:3000");
+});
 
 // Map controller routes to the application.
 // This enables the app to respond to HTTP requests directed at controller-defined endpoints.

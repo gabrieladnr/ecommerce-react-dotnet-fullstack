@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react"; 
 import { Fragment } from "react/jsx-runtime"; 
+import { Product } from "./product";
 
 function App() {
   // Declare a state variable `products` to hold an array of product objects.
-  // Each product object has `name` (string) and `price` (number) properties.
-  // `setProducts` is used to update the state.
-  const [products, setProducts] = useState<{ name: string; price: number }[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
-  // useEffect is used to perform side effects (e.g., fetching data).
   // Runs once when the component mounts because of the empty dependency array `[]`.
   useEffect(() => {
     // Fetch products from the API
-    fetch("http://localhost:5000/api/products")
+    fetch("https://localhost:5000/api/products")
       .then((response) => response.json()) // Parse the JSON from the response
       .then((data) => setProducts(data)) // Update `products` state with the fetched data
       .catch((error) => {
@@ -25,6 +23,12 @@ function App() {
       {
         name: "product" + (prevState.length + 1), // Generate a new product name
         price: (prevState.length * 100) + 100, // Calculate the price based on the number of products
+        description: "string",
+        pictureUrl: "string",
+        type: "string",
+        brand: "string",
+        quantityInStock: 100 ,
+        id: prevState.length + 1
       },
     ]);
   };
