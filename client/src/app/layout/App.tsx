@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"; 
-import { Fragment } from "react/jsx-runtime"; 
-import { Product } from "./product";
+import { useEffect, useState } from "react";
+import { Fragment } from "react/jsx-runtime";
+import { Product } from "../models/product";
 
 function App() {
   // Declare a state variable `products` to hold an array of product objects.
@@ -27,7 +27,7 @@ function App() {
         pictureUrl: "string",
         type: "string",
         brand: "string",
-        quantityInStock: 100 ,
+        quantityInStock: 100,
         id: prevState.length + 1
       },
     ]);
