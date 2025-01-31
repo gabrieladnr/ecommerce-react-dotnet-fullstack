@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Fragment } from "react/jsx-runtime";
 import { Product } from "../models/product";
+import Catalog from "../../feature/catalog/Catalog";
 
 function App() {
   // Declare a state variable `products` to hold an array of product objects.
@@ -36,18 +37,7 @@ function App() {
   return (
     <Fragment>
       <h1 style={{ color: "blueviolet" }}>Re-store</h1>
-
-      <ul>
-        {products.map((item, index) => (
-          // Map over `products` to render each product as a list item.
-          // Use `index` as the key (ensure unique keys in a real-world scenario).
-          <li key={index}>
-            {item.name} - {item.price} {/* Display product name and price */}
-          </li>
-        ))}
-      </ul>
-
-      <button onClick={addProduct}>Add Product</button>
+      <Catalog products={products} addProduct={addProduct}/>      
     </Fragment>
   );
 }
