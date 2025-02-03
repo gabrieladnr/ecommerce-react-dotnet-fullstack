@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Fragment } from "react/jsx-runtime";
 import { Product } from "../models/product";
 import Catalog from "../../feature/catalog/Catalog";
+import { Container, Typography } from "@mui/material";
 
 function App() {
   // Declare a state variable `products` to hold an array of product objects.
@@ -35,10 +35,11 @@ function App() {
   };
 
   return (
-    <Fragment>
-      <h1 style={{ color: "blueviolet" }}>Re-store</h1>
-      <Catalog products={products} addProduct={addProduct}/>      
-    </Fragment>
+    <Container maxWidth='xl'>
+      <Typography variant='h4'>Re-store</Typography>
+      <Catalog products={products} addProduct={addProduct}/>
+    </Container>
+
   );
 }
 

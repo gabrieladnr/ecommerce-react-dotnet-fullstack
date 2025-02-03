@@ -1,4 +1,3 @@
-import { Fragment } from "react/jsx-runtime";
 import { Product } from "../../app/models/product";
 
 type Props = {
@@ -8,7 +7,7 @@ type Props = {
 
 export default function Catalog({products, addProduct}: Props) {
   return (
-    <Fragment>
+    <>
       <ul>
         {products.map((item) => (          
           <li key={item.id}>
@@ -18,7 +17,7 @@ export default function Catalog({products, addProduct}: Props) {
       </ul>
 
       <button onClick={addProduct}>Add Product</button>
-    </Fragment>
+    </>
   )
 }
 
