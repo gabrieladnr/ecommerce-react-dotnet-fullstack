@@ -24,8 +24,12 @@ builder.Services.AddDbContext<StoreContext>(opt =>
 {
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+builder.Services.AddCors();
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 802bee8cf90a7cf526b21645d4819fd3e04a9316
 // ========================= Build the Application =========================
 // Build the app using the configured services.
 var app = builder.Build();
@@ -48,6 +52,16 @@ if (app.Environment.IsDevelopment())
 // Note: This assumes additional configuration for authentication/authorization is in place.
 app.UseAuthorization();
 
+<<<<<<< HEAD
+=======
+app.UseCors(opt =>
+{
+    opt.AllowAnyHeader()
+    .AllowAnyMethod()
+    .WithOrigins("https://localhost:3000");
+});
+
+>>>>>>> 802bee8cf90a7cf526b21645d4819fd3e04a9316
 // Map controller routes to the application.
 // This enables the app to respond to HTTP requests directed at controller-defined endpoints.
 app.MapControllers();
@@ -72,4 +86,8 @@ catch (Exception ex)
     logger.LogError(ex, "A problem occurred during migration");
 }
 
+<<<<<<< HEAD
 app.Run(); // Starts the web server and begins handling requests
+=======
+app.Run(); // Starts the web server and begins handling requests
+>>>>>>> 802bee8cf90a7cf526b21645d4819fd3e04a9316
