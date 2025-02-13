@@ -17,19 +17,20 @@ builder.Services.AddCors();
 
 var app = builder.Build();
 
+app.UseCors(opt =>
+{
+    opt.AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowCredentials()
+    .WithOrigins("https://localhost:3000");
+});
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseCors(opt =>
-{
-    opt.AllowAnyHeader()
-    .AllowAnyMethod()
-    .WithOrigins("https://localhost:3000");
-});
 
 app.UseAuthorization();
 
