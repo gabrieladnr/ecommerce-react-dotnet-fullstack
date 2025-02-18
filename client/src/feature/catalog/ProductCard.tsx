@@ -16,7 +16,7 @@ export default function ProductCard({ product }: Props) {
                 justifyContent: 'space-between'
             }}
         >
-
+            {/* FIXME: Image not displaying correctly*/}
             <CardMedia
                 sx={{ height: 240, backgroundSize: 'cover' }}
                 image={product.pictureUrl}
