@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Product } from "../models/product";
 import Catalog from "../../feature/catalog/Catalog";
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
 function App() {
   // Declare a state variable `products` to hold an array of product objects.
@@ -35,7 +35,7 @@ function App() {
   };
   return (
     <Container maxWidth='xl'>
-      <h1 style={{ color: 'slateBlue' }}>Re-store</h1>
+      <Typography variant='h4' style={{ color: 'slateBlue' }}>Re-store</Typography>
       <Catalog products={products} addProduct={addProduct}/>
       </Container>
 
