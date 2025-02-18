@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Product } from "../models/product";
 import Catalog from "../../feature/catalog/Catalog";
-import { Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 
 function App() {
   // Declare a state variable `products` to hold an array of product objects.
@@ -31,13 +31,16 @@ function App() {
         quantityInStock: 100,
         id: prevState.length + 1
       },
-    ]); 
+    ]);
   };
   return (
     <Container maxWidth='xl'>
-      <Typography variant='h4' style={{ color: 'slateBlue' }}>Re-store</Typography>
-      <Catalog products={products} addProduct={addProduct}/>
-      </Container>
+      <Box display='flex' justifyContent='center' gap={3} margin={3}>
+        <Typography variant='h4' style={{ color: 'slateBlue' }}>Re-store</Typography>
+        <Button variant='contained' onClick={addProduct}>Add Product</Button>
+      </Box>
+      <Catalog products={products} addProduct={addProduct} />
+    </Container>
 
   );
 
