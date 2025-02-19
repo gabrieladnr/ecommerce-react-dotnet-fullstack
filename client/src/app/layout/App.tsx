@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Product } from "../models/product";
 import Catalog from "../../feature/catalog/Catalog";
 import { Box, Button, Container, Typography } from "@mui/material";
+import NavBar from "../../feature/catalog/NavBar";
 
 function App() {
   // Declare a state variable `products` to hold an array of product objects.
@@ -34,14 +35,13 @@ function App() {
     ]);
   };
   return (
-    <Container maxWidth='xl'>
-      <Box display='flex' justifyContent='center' gap={3} margin={3}>
-        <Typography variant='h4' style={{ color: 'slateBlue' }}>Re-store</Typography>
-        <Button variant='contained' onClick={addProduct}>Add Product</Button>
-      </Box>
-      <Catalog products={products} addProduct={addProduct} />
-    </Container>
+    <Fragment>
+      <NavBar />
+      <Container maxWidth='xl' sx={{mt:14}}>
 
+        <Catalog products={products} addProduct={addProduct} />
+      </Container>
+    </Fragment>
   );
 
 }
