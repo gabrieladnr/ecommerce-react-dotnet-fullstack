@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import { Product } from "../models/product";
 import Catalog from "../../feature/catalog/Catalog";
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import NavBar from "../../feature/catalog/NavBar";
 
 function App() {
