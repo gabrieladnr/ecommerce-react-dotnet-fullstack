@@ -1,12 +1,22 @@
-import { Fragment, useEffect, useState } from "react";
-import { Product } from "../models/product";
+import { Box, Container, createTheme, CssBaseline, ThemeProvider } from "@mui/material";
+import { useEffect, useState } from "react";
 import Catalog from "../../feature/catalog/Catalog";
-import { Container } from "@mui/material";
 import NavBar from "../../feature/catalog/NavBar";
+import { Product } from "../models/product";
 
 function App() {
   // Declare a state variable `products` to hold an array of product objects.
   const [products, setProducts] = useState<Product[]>([]);
+  const darkMode = true;
+  const palletType = darkMode ? "dark" : "light"
+  const theme = createTheme({
+    palette: {
+      mode: palletType,
+      background: {
+        default: (palletType == "light") ? "#eaeaea" : "121212"
+      }
+    }
+  })
 
   // Runs once when the component mounts because of the empty dependency array `[]`.
   useEffect(() => {
@@ -35,13 +45,16 @@ function App() {
     ]);
   };
   return (
-    <Fragment>
-      <NavBar />
-      <Container maxWidth='xl' sx={{mt:14}}>
-
-        <Catalog products={products} addProduct={addProduct} />
-      </Container>
-    </Fragment>
+    <ThemeProvider theme={theme}>
+      <CssBaseline>
+        <NavBar />
+        <Box sx={{ minHeight: '100vh', background: darkMode ? "121212" : "#eaeaea" }}>  // FIXME: background not aplying color
+          <Container maxWidth='xl' sx={{ mt: 14 }}>
+            <Catalog products={products} addProduct={addProduct} />
+          </Container>
+        </Box>
+      </CssBaseline>
+    </ThemeProvider>
   );
 
 }
