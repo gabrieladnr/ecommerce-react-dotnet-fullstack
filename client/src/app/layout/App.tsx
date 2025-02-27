@@ -7,7 +7,7 @@ import { Product } from "../models/product";
 function App() {
   // Declare a state variable `products` to hold an array of product objects.
   const [products, setProducts] = useState<Product[]>([]);
-  const darkMode = true;
+  const darkMode = false;
   const palletType = darkMode ? "dark" : "light"
   const theme = createTheme({
     palette: {
@@ -48,7 +48,13 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline>
         <NavBar />
-        <Box sx={{ minHeight: '100vh', background: darkMode ? "121212" : "#eaeaea" }}>  // FIXME: background not aplying color
+        <Box sx={{
+          minHeight: '100vh',
+          background: darkMode
+            ? "radial-gradient(circle, #1e3aBa, #111B27"
+            : "radial-gradient(circle, #beacf9, #f0f9ff",
+            py: 6
+        }}>  // FIXME: background color not applying correctly
           <Container maxWidth='xl' sx={{ mt: 14 }}>
             <Catalog products={products} addProduct={addProduct} />
           </Container>
