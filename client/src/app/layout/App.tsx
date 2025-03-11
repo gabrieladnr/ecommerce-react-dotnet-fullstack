@@ -7,16 +7,21 @@ import { Product } from "../models/product";
 function App() {
   // Declare a state variable `products` to hold an array of product objects.
   const [products, setProducts] = useState<Product[]>([]);
-  const darkMode = false;
+  const [darkMode, setDarkMode] = useState(false);
+
   const palletType = darkMode ? "dark" : "light"
   const theme = createTheme({
     palette: {
       mode: palletType,
       background: {
-        default: (palletType == "light") ? "#eaeaea" : "121212"
+        default: (palletType == "light") ? "#eaeaea" : "#121212"
       }
     }
   })
+
+  const toggleDarkMode = () => {
+    setDarkMode((prevState) => !prevState)
+  }
 
   // Runs once when the component mounts because of the empty dependency array `[]`.
   useEffect(() => {
@@ -44,22 +49,23 @@ function App() {
       },
     ]);
   };
+  
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline>
-        <NavBar />
+      <CssBaseline/>
+        <NavBar darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
         <Box sx={{
           minHeight: '100vh',
           background: darkMode
-            ? "radial-gradient(circle, #1e3aBa, #111B27"
-            : "radial-gradient(circle, #beacf9, #f0f9ff",
+            ? "radial-gradient(circle, #1e3aBa, #111B27)"
+            : "radial-gradient(circle, #beacf9, #f0f9ff)",
             py: 6
         }}>  // FIXME: background color not applying correctly
           <Container maxWidth='xl' sx={{ mt: 14 }}>
             <Catalog products={products} addProduct={addProduct} />
           </Container>
         </Box>
-      </CssBaseline>
+      <CssBaseline/>
     </ThemeProvider>
   );
 
